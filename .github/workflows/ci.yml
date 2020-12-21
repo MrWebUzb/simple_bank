@@ -46,3 +46,11 @@ jobs:
 
     - name: Test
       run: make test
+
+    - name: Notifications
+      uses: yanzay/notify-telegram@master
+      if: always()
+      with:
+        chat: ${{ secrets.CHAT_ID }}
+        token: ${{ secrets.BOT_TOKEN }}
+        status: ${{ job.status }}

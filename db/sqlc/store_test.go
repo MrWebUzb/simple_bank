@@ -110,7 +110,6 @@ func TestTransferTx(t *testing.T) {
 }
 
 func TestTransferTxDeadlock(t *testing.T) {
-	require.Equal(t, 1, 0)
 	store := NewStore(testDB)
 
 	account1 := createRandomAccount(t)
