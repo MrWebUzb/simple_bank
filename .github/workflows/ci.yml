@@ -48,9 +48,7 @@ jobs:
       run: make test
 
     - name: Notifications
-      uses: yanzay/notify-telegram@master
-      if: always()
+      uses: appleboy/telegram-action@master
       with:
-        chat: ${{ secrets.CHAT_ID }}
+        to: ${{ secrets.CHAT_ID }}
         token: ${{ secrets.BOT_TOKEN }}
-        status: ${{ job.status }}
